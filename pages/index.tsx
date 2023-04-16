@@ -5,6 +5,7 @@ import { AiFillLinkedin } from 'react-icons/ai';
 import React, { useState, useEffect } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Hero = () => (
   <div className="w-full bg-gray-900 text-white p-8">
@@ -298,14 +299,19 @@ const OrgaTeam = () => (
 );
 
 const Home: NextPage = () => (
-  <div>
-    <Hero />
-    <LeadTextSection/>
-    <Communities />
-    <OrgaTeam />
-    <Newsletter />
-    <Footer />
-  </div>
+  <>
+    <Head>
+      <title>Machine Minds</title>
+    </Head>
+    <div>
+      <Hero />
+      <LeadTextSection />
+      <Communities />
+      <OrgaTeam />
+      <Newsletter />
+      <Footer />
+    </div>
+  </>
 );
 
 export default Home;
