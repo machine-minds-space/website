@@ -229,6 +229,10 @@ const Footer = () => (
         <Link href="/imprint" className="text-gray-400 hover:text-gray-500">
           Imprint
         </Link>
+        |{' '}
+        <Link href="/code-of-conduct" className="text-gray-400 hover:text-gray-500">
+          Code of Conduct
+        </Link>
       </p>
     </div>
   </footer>
