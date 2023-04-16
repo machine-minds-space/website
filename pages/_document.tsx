@@ -1,6 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
+  // Get the full URL of the logo in the public folder
+  const logoUrl = `${window.location.origin}/logo.png`;
   return (
     <Html lang="en">
       <Head>
@@ -17,6 +19,7 @@ export default function Document() {
           property="og:description"
           content="Discover the AI revolution with Machine Minds! Connect with fellow AI enthusiasts, visionaries, and industry experts in our inclusive meetup group. Dive into AI's transformative impact on tech, society, and businesses of all sizes. Join now, make friends, gain insights, and shape a smarter future together!"
         />
+        <meta property="og:image" content={logoUrl} />
       </Head>
       <body>
         <Main />
