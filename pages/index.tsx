@@ -31,7 +31,7 @@ const LeadTextSection = () => (
     <section className="mx-auto max-w-7xl">
       <p className="text-2xl text-justify leading-relaxed tracking-wide text-gray-600">
         Discover the AI revolution with Machine Minds! Connect with fellow AI enthusiasts,
-        visionaries, and industry experts in our inclusive meetup group. Dive into AI's
+        visionaries, and industry experts in our inclusive meetup group. Dive into AI{"'"}s
         transformative impact on tech, society, and businesses of all sizes. Join now, make
         friends, gain insights, and shape a smarter future together!
       </p>
