@@ -27,3 +27,16 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: transparent;
+}
