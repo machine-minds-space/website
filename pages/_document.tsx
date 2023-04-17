@@ -1,8 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 export default function Document() {
   // Get the full URL of the logo in the public folder
-  const logoUrl = `${window.location.origin}/logo.png`;
+  const logoUrl = `${publicRuntimeConfig.publicUrl}/logo.png`;
   return (
     <Html lang="en">
       <Head>
