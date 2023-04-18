@@ -41,7 +41,7 @@ const LeadTextSection = () => (
 );
 
 const Communities = () => (
-  <div className="w-full bg-gray-100 p-8">
+  <div className="w-full bg-gray-100 p-8 dark:text-gray-900">
     <div className="mx-auto max-w-7xl">
       <h2 className="text-2xl mb-8">Local Communities</h2>
       <p className="text-lg mb-8">
@@ -240,7 +240,7 @@ const Footer = () => (
 );
 
 const OrgaTeam = () => (
-  <div className="w-full bg-gray-200 p-8">
+    <div className="w-full bg-gray-200 p-8 dark:text-gray-900">
     <div className="mx-auto max-w-7xl">
       <h2 className="text-2xl mb-8">Orga Team</h2>
       <div className="flex flex-wrap justify-center">
