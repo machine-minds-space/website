@@ -14,6 +14,10 @@ const imageData = [
   { src: '/sparky/sparky-statue.png', caption: 'Statue' },
   { src: '/sparky/sparky-vase.png', caption: 'Vase' },
   { src: '/sparky/sparky-dj.png', caption: 'DJ' },
+  { src: '/sparky/sparky-geese-offspring.png', caption: 'Geese offspring' },
+  { src: '/sparky/sparky-grater.png', caption: 'Grater' },
+  { src: '/sparky/sparky-pepper.png', caption: 'Pepper' },
+  { src: '/sparky/sparky-play-horse.png', caption: 'Play Horse' },
 ];
 
 export default function Gallery() {
