@@ -7,6 +7,17 @@ import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
 
+const StickyBar = () => (
+  <div className="w-full bg-indigo-600 text-white text-center p-2 sticky top-0 z-50">
+    <p>
+      Join us for the Machine Minds Camp on the 2nd of June!{' '}
+      <Link href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw" className="underline">
+        Learn more
+      </Link>
+    </p>
+  </div>
+);
+
 const Hero = () => (
   <div className="w-full bg-gray-900 text-white p-8">
     <div className="mx-auto max-w-7xl flex items-center">
@@ -304,6 +315,7 @@ const Home: NextPage = () => (
       <title>Machine Minds</title>
     </Head>
     <div>
+      <StickyBar />
       <Hero />
       <LeadTextSection />
       <Communities />
