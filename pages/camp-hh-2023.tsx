@@ -309,7 +309,7 @@ const Venue = function Venue() {
 
             </p>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Neben dem großen Veranstaltungsraum {'"'}Spielbudenplatz{'"'} samt Bühne und Technik, stehen uns auch kleinere voll ausgestatte Räume für Sessions zur Verfügung. Außerdem gibt es mehr als genug Platz für den "Hallway Track", zum Netzwerken, prompten, kollaborieren und Spaß haben.
+              Neben dem großen Veranstaltungsraum {'"'}Spielbudenplatz{'"'} samt Bühne und Technik, stehen uns auch kleinere voll ausgestatte Räume für Sessions zur Verfügung. Außerdem gibt es mehr als genug Platz für den {'"'}Hallway Track{'"'}, zum Netzwerken, prompten, kollaborieren und Spaß haben.
             </p>
             <div className="mt-10 flex">
               <a
