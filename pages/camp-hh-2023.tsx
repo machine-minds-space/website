@@ -1,22 +1,26 @@
 // pages/machine-minds-camp.tsx
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const Hero = () => (
+interface HeroProps {
+  children?: ReactNode;
+}
+
+const Hero: React.FC<HeroProps> = ({ children }) => (
   <div className="w-full bg-gradient-to-r from-blue-600 to-blue-900 text-white p-8">
     <div className="mx-auto max-w-7xl flex items-center">
       <div>
         <h1 className="text-4xl">Machine Minds Camp</h1>
         <p className="text-xl">Entdecke die Zukunft der generativen KI</p>
       </div>
+      {children}
     </div>
   </div>
 );
-
 const CountdownTimer = () => {
   const [time, setTime] = useState({
     days: 0,
@@ -40,7 +44,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex space-x-4 text-center">
+    <div className="flex space-x-4 text-center text-sm sm:text-lg">
       <div>
         <p className="text-2xl font-bold">{time.days}</p>
         <p>Tage</p>
@@ -68,7 +72,7 @@ const RegisterButton = () => (
 );
 
 const InfoSection = () => (
-  <div className="w-full bg-gray-200 p-8">
+  <div className="p-8">
     <section className="mx-auto max-w-7xl">
       <CountdownTimer />
       <p className="text-xl sm:text-2xl text-justify leading-snug sm:leading-relaxed tracking-wide text-gray-600">
@@ -94,11 +98,17 @@ const OpenSpaceTopics = () => (
   </div>
 );
 
+const CombinedHeroInfo = () => (
+  <Hero>
+    <InfoSection />
+  </Hero>
+);
+
 const Organizers = () => (
-  <div className="w-full bg-gray-200 p-8">
+   <div className="w-full bg-gray-200 p-8">
     <div className="mx-auto max-w-7xl">
       <h2 className="text-2xl mb-8">Organisatoren</h2>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
           { name: 'Sebastian', image: '/sebastian.jpg' },
           { name: 'Björn', image: '/bjorn.jpg' },
@@ -127,10 +137,10 @@ const Organizers = () => (
 );
 
 const Sponsors = () => (
-  <div className="w-full bg-gray-100 p-8">
+ <div className="w-full bg-gray-100 p-8">
     <div className="mx-auto max-w-7xl">
       <h2 className="text-2xl mb-8">Sponsoren</h2>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           { name: 'New Work SE', image: '/new-work-se-logo.png' },
           { name: 'Machine Minds', image: '/machine-minds-logo.png' },
@@ -172,8 +182,7 @@ const MachineMindsCamp: NextPage = () => (
       <title>Machine Minds Camp</title>
     </Head>
     <div>
-      <Hero />
-      <InfoSection />
+      <CombinedHeroInfo />
       <OpenSpaceTopics />
       <Organizers />
       <Sponsors />
