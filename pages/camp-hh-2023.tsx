@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
@@ -133,7 +134,7 @@ const Agenda = function Agenda() {
 
 
 const featuredSessionIdea = {
-  body: 'Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.',
+  body: 'Zusammenarbeit zwischen Mensch und Maschine - wie könnte die Zukunft aussehen in der Maschinen praktisch alles besser können als wir?',
   author: {
     name: 'Brenna Goyette',
     handle: 'brennagoyette',
@@ -146,7 +147,7 @@ const sessionIdeas = [
   [
     [
       {
-        body: 'Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.',
+        body: 'Prompt Engineering - Was ist das und wie kann es mir helfen?',
         author: {
           name: 'Leslie Alexander',
           handle: 'lesliealexander',
@@ -158,7 +159,7 @@ const sessionIdeas = [
     ],
     [
       {
-        body: 'Aut reprehenderit voluptatem eum asperiores beatae id. Iure molestiae ipsam ut officia rem nulla blanditiis.',
+        body: 'Wie trainiere ich eigentlich Modelle?',
         author: {
           name: 'Lindsay Walton',
           handle: 'lindsaywalton',
@@ -172,7 +173,7 @@ const sessionIdeas = [
   [
     [
       {
-        body: 'Voluptas quos itaque ipsam in voluptatem est. Iste eos blanditiis repudiandae. Earum deserunt enim molestiae ipsum perferendis recusandae saepe corrupti.',
+        body: 'Stereotype und Vorurteile in generativer KI',
         author: {
           name: 'Tom Cook',
           handle: 'tomcook',
@@ -184,7 +185,7 @@ const sessionIdeas = [
     ],
     [
       {
-        body: 'Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.',
+        body: 'Beyond the Textbox: Was für neue Möglichkeiten ergeben sich durch Systeme die meine Intention verstehen können?',
         author: {
           name: 'Leonard Krasner',
           handle: 'leonardkrasner',
@@ -240,7 +241,7 @@ const Sessions = function SessionIdeas() {
             <blockquote className="p-12 text-xl font-semibold leading-8 tracking-tight text-gray-900">
               <p>{`“${featuredSessionIdea.body}”`}</p>
             </blockquote>
-            <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
+            {/* <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
               <img
                 className="h-10 w-10 flex-none rounded-full bg-gray-50"
                 src={featuredSessionIdea.author.imageUrl}
@@ -251,7 +252,7 @@ const Sessions = function SessionIdeas() {
                 <div className="text-gray-600">{`@${featuredSessionIdea.author.handle}`}</div>
               </div>
               <img className="h-10 w-auto flex-none" src={featuredSessionIdea.author.logoUrl} alt="" />
-            </figcaption>
+            </figcaption> */}
           </figure>
           {sessionIdeas.map((columnGroup, columnGroupIdx) => (
             <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
@@ -274,13 +275,13 @@ const Sessions = function SessionIdeas() {
                       <blockquote className="text-gray-900">
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
-                      <figcaption className="mt-6 flex items-center gap-x-4">
+                      {/* <figcaption className="mt-6 flex items-center gap-x-4">
                         <img className="h-10 w-10 rounded-full bg-gray-50" src={testimonial.author.imageUrl} alt="" />
                         <div>
                           <div className="font-semibold">{testimonial.author.name}</div>
                           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
                         </div>
-                      </figcaption>
+                      </figcaption> */}
                     </figure>
                   ))}
                 </div>
@@ -308,7 +309,7 @@ const Venue = function Venue() {
 
             </p>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Neben dem großen Veranstaltungsraum "Spielbudenplatz" samt Bühne und Technik, stehen uns auch kleinere voll ausgestatte Räume für Sessions zur Verfügung. Außerdem gibt es mehr als genug Platz für den "Hallway Track", zum Netzwerken, prompten, kollaborieren und Spaß haben.
+              Neben dem großen Veranstaltungsraum {'"'}Spielbudenplatz{'"'} samt Bühne und Technik, stehen uns auch kleinere voll ausgestatte Räume für Sessions zur Verfügung. Außerdem gibt es mehr als genug Platz für den "Hallway Track", zum Netzwerken, prompten, kollaborieren und Spaß haben.
             </p>
             <div className="mt-10 flex">
               <a
@@ -321,30 +322,38 @@ const Venue = function Venue() {
           </div>
           <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
             <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-              <img
-                src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
+              <Image
+                src="/camp/chillout.jpeg"
                 alt=""
+                width={1152}
+                height={866}
                 className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
               />
             </div>
             <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
               <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
-                <img
-                  src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
+                <Image
+                  src="/camp/coworking.webp"
                   alt=""
+                  width={768}
+                  height={604}
                   className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
               <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
-                <img
-                  src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
+                <Image
+                  src="/camp/new-work-harbour.jpeg"
+                  width={1152}
+                  height={842}
                   alt=""
                   className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
               <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-                <img
-                  src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
+                <Image
+                  src="/camp/session.jpeg"
+                  width={768}
+                  height={604}
                   alt=""
                   className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                 />
@@ -363,9 +372,27 @@ const Venue = function Venue() {
 const people = [
   {
     name: 'Sebastian Korfmann',
-    role: 'Co-Founder / CEO',
+    role: 'Organisator',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      '/skorfmann.jpg',
+  },
+  {
+    name: 'Björn Linder',
+    role: 'Organisator',
+    imageUrl:
+      '/camp/bjoern.jpg',
+  },
+  {
+    name: 'Georg Warth',
+    role: 'Organisator',
+    imageUrl:
+      '/camp/georg.jpg',
+  },
+  {
+    name: 'Srikanth Achanta',
+    role: 'Organisator',
+    imageUrl:
+      '/sri.jpeg',
   },
   // More people...
 ]
@@ -377,14 +404,14 @@ const Team = function Team() {
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Orga Team</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Organisiert als community driven Event
+            Organisiert als Community Event
           </p>
         </div>
         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
-                <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
+                <Image className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" width={256} height={256}/>
                 <div>
                   <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
                   <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
@@ -403,11 +430,16 @@ const Team = function Team() {
 
 const faqs = [
   {
-    question: 'How do you make holy water?',
+    question: 'Bis wann kann ich Tickets kaufen?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      'Aus logistischen Gründen sind Tickets nur bis zum 31. Mai 2023 erhältlich.',
   },
-  // More questions...
+  {
+    question: 'Wer sind die Organisatoren?',
+    answer:
+      'Das Orga-Team besteht aus Leuten mit verschiedenen Backgrounds. Uns eint, dass wir alle fasziniert sind von den Möglichkeiten, Chancen und Herausforderungen der generativen Künstlichen Intelligenz.',
+  },
+  //More questions...
 ]
 
 const Faq = function Faq() {
@@ -418,11 +450,10 @@ const Faq = function Faq() {
           <div className="lg:col-span-5">
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
             <p className="mt-4 text-base leading-7 text-gray-600">
-              Can’t find the answer you’re looking for? Reach out to our{' '}
-              <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                customer support
+              Noch weitere Fragen? Schreib uns einfach {' '}
+              <a href="mailto:sebastian@korfmann.net" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                eine Mail
               </a>{' '}
-              team.
             </p>
           </div>
           <div className="mt-10 lg:col-span-7 lg:mt-0">
@@ -561,9 +592,9 @@ const Newsletter = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Zum Newsletter anmelden.</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Stay updated on community events, and valuable insights, all tailored for the curious minds eager to explore artificial intelligence!
+              Bleibe auf dem Laufenden zu diesem und weitern Events und Themen rund um generative Küntliche Intelligenz.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -607,7 +638,7 @@ const Newsletter = () => {
               </div>
               <dt className="mt-4 font-semibold text-white">Low frequency</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Get essential updates with our low-frequency Newsletter, featuring only the most important news and insights.
+                Wir senden dir nur dann eine Mail, wenn es etwas neues gibt.
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -616,7 +647,7 @@ const Newsletter = () => {
               </div>
               <dt className="mt-4 font-semibold text-white">No spam</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                We respect your privacy and won{"'"}t spam your inbox.
+                Wir geben deine Daten nicht weiter und senden dir auch keine Werbung.
               </dd>
             </div>
           </dl>
@@ -667,19 +698,16 @@ const TicketCTA =  function TicketCTA() {
     <div className="bg-indigo-100">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Ready to dive in?
+          Jetzt anmelden und mitmachen.
           <br />
-          Start your free trial today.
+          Wir freuen uns auf dich!
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
           <a
             href="#"
             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Get started
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Learn more <span aria-hidden="true">→</span>
+            Ticket kaufen
           </a>
         </div>
       </div>
