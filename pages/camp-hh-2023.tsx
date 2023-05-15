@@ -4,6 +4,55 @@ import Image from 'next/image';
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
+import ReactModal from 'react-modal';
+
+interface PopupProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  eventUrl: string;  // Add this line
+}
+
+const Popup: React.FC<PopupProps> = ({ isOpen, setIsOpen, eventUrl }) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://js.tito.io/v2';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <ReactModal
+      isOpen={isOpen}
+      onRequestClose={() => setIsOpen(false)}
+      className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black bg-opacity-50"
+      overlayClassName="Overlay"
+      ariaHideApp={false}
+    >
+      <div
+        id="tito-widget"
+        className="w-full max-w-lg bg-white rounded shadow p-4 space-y-4 overflow-y-auto"
+        data-event={eventUrl} // Add this line
+        data-development_mode="true"
+      ></div>
+    </ReactModal>
+  );
+};
+
+interface ButtonProps {
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ setIsOpen }) => (
+  <button
+    className="px-4 py-2 font-medium text-white bg-blue-500 rounded"
+    onClick={() => setIsOpen(true)}
+  >
+    Tickets kaufen
+  </button>
+);
 
 const Hero = function Hero() {
   return (
@@ -40,12 +89,12 @@ const Hero = function Hero() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Ticket kaufen
               </a>
-              <a href="#sessions" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="#agenda" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -71,7 +120,7 @@ const includedFeatures = [
 
 const Agenda = function Agenda() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div id="agenda" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Agenda</h2>
@@ -110,7 +159,7 @@ const Agenda = function Agenda() {
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">EUR</span>
                 </p>
                 <a
-                  href="#"
+                  href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Jetzt Ticket sichern
@@ -313,7 +362,7 @@ const Venue = function Venue() {
             </p>
             <div className="mt-10 flex">
               <a
-                href="#"
+                href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Ticket kaufen <span aria-hidden="true">&rarr;</span>
@@ -704,7 +753,7 @@ const TicketCTA =  function TicketCTA() {
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
           <a
-            href="#"
+            href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Ticket kaufen
@@ -716,23 +765,25 @@ const TicketCTA =  function TicketCTA() {
 }
 
 
-const MachineMindsCamp: NextPage = () => (
-  <>
-    <Head>
-      <title>Machine Minds Camp</title>
-    </Head>
-    <div>
-      <Hero />
-      <Agenda />
-      <Sessions />
-      <Venue />
-      <Team />
-      <Newsletter />
-      <Faq />
-      <TicketCTA />
-      <Footer />
-    </div>
-  </>
-);
+const MachineMindsCamp: NextPage = () => {
+  return(
+    <>
+      <Head>
+        <title>Machine Minds Camp</title>
+      </Head>
+      <div>
+        <Hero />
+        <Agenda />
+        <Sessions />
+        <Venue />
+        <Team />
+        <Newsletter />
+        <Faq />
+        <TicketCTA />
+        <Footer />
+      </div>
+    </>
+  );
+};
 
 export default MachineMindsCamp;
