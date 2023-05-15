@@ -210,6 +210,24 @@ const sessionIdeas = [
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
       },
+      {
+        body: 'Generative AI und Datenschutz, wie passt das zusammen?',
+        author: {
+          name: 'Leslie Alexander',
+          handle: 'lesliealexander',
+          imageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        body: 'Software Engineering im Jahre 2025 - KI vom CoPilot zum CoWorker oder sogar mehr?',
+        author: {
+          name: 'Leslie Alexander',
+          handle: 'lesliealexander',
+          imageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
       // More testimonials...
     ],
     [
@@ -222,6 +240,17 @@ const sessionIdeas = [
             'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
       },
+      {
+        body: 'Feature oder Produkt? Was sind die wirklich innovativen use-cases?',
+        author: {
+          name: 'Tom Cook',
+          handle: 'tomcook',
+          imageUrl:
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+
+
       // More testimonials...
     ],
   ],
@@ -229,6 +258,15 @@ const sessionIdeas = [
     [
       {
         body: 'Stereotype und Vorurteile in generativer KI',
+        author: {
+          name: 'Tom Cook',
+          handle: 'tomcook',
+          imageUrl:
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        body: 'AI Daily - Eine 100% generierte Zeitung mit Drehregler von Boulevard über TAZ bis FAZ. Wie könnte das aussehen? Was sind die Herausforderungen?',
         author: {
           name: 'Tom Cook',
           handle: 'tomcook',
@@ -246,6 +284,15 @@ const sessionIdeas = [
           handle: 'leonardkrasner',
           imageUrl:
             'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        body: 'Ein Jahrzehnt Stackoverflow gefüttert, and all I got was this lousy T-Shirt - Wie verändert sich Content Creation mit ChatGPT et al?',
+        author: {
+          name: 'Tom Cook',
+          handle: 'tomcook',
+          imageUrl:
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
       },
       // More testimonials...
