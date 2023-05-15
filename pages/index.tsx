@@ -6,6 +6,9 @@ import React, { useState, useEffect } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 const StickyBar = () => (
   <div className="w-full bg-indigo-600 text-white text-center p-2 sticky top-0 z-50">
@@ -309,10 +312,24 @@ const OrgaTeam = () => (
   </div>
 );
 
-const Home: NextPage = () => (
+const Home: NextPage = () => {
+    // Get the full URL of the logo in the public folder
+  const logoUrl = `${publicRuntimeConfig.publicUrl}/logo.png`;
+
+  return (
   <>
     <Head>
       <title>Machine Minds</title>
+        <meta
+          name="description"
+          content="Discover the AI revolution with Machine Minds! Connect with fellow AI enthusiasts, visionaries, and industry experts in our inclusive meetup group. Dive into AI's transformative impact on tech, society, and businesses of all sizes. Join now, make friends, gain insights, and shape a smarter future together!"
+        />
+        <meta property="og:title" content="Machine Minds" />
+        <meta
+          property="og:description"
+          content="Discover the AI revolution with Machine Minds! Connect with fellow AI enthusiasts, visionaries, and industry experts in our inclusive meetup group. Dive into AI's transformative impact on tech, society, and businesses of all sizes. Join now, make friends, gain insights, and shape a smarter future together!"
+        />
+        <meta property="og:image" content={logoUrl} />
     </Head>
     <div>
       <StickyBar />
@@ -325,5 +342,6 @@ const Home: NextPage = () => (
     </div>
   </>
 );
+  };
 
 export default Home;
