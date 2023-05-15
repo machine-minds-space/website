@@ -744,7 +744,7 @@ const TicketCTA =  function TicketCTA() {
 
 
 const MachineMindsCamp: NextPage = () => {
-  const logoUrl = `${publicRuntimeConfig.publicUrl}/og-camp.png`;
+  const logoUrl = `${publicRuntimeConfig.publicUrl}/camp-og.png`;
   return(
     <>
       <Head>
