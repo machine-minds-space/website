@@ -11,7 +11,7 @@ const StickyBar = () => (
   <div className="w-full bg-indigo-600 text-white text-center p-2 sticky top-0 z-50">
     <p>
       Join us for the Machine Minds Camp on the 2nd of June!{' '}
-      <Link href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw" className="underline">
+      <Link href="/camp-hh-2023" className="underline">
         Learn more
       </Link>
     </p>
