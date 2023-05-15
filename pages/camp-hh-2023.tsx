@@ -189,7 +189,7 @@ const Agenda = function Agenda() {
 
 
 const featuredSessionIdea = {
-  body: 'Zusammenarbeit zwischen Mensch und Maschine - wie könnte die Zukunft aussehen in der Maschinen praktisch alles besser können als wir?',
+  body: 'Zusammenarbeit zwischen Mensch und Maschine - wie könnte die Zukunft aussehen in der Maschinen viel schneller und umfassender lernen als Menschen?',
   author: {
     name: 'Brenna Goyette',
     handle: 'brennagoyette',
