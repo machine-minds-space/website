@@ -806,6 +806,12 @@ const MachineMindsCamp: NextPage = () => {
           content="Das erste Machine Minds Camp findet am Freitag, 2. Juni in der Hamburger Hafencity bei der New Work SE im New Work Harbour statt."
         />
         <meta property="og:image" content={logoUrl} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@skorfmann" />
+        <meta name="twitter:title" content="Machine Minds Camp Hamburg 2023" />
+        <meta name="twitter:description" content="Das erste Machine Minds Camp findet am Freitag, 2. Juni in der Hamburger Hafencity bei der New Work SE im New Work Harbour statt." />
+        <meta name="twitter:image" content={logoUrl} />
       </Head>
       <div>
         <Hero />
