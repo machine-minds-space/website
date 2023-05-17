@@ -5,11 +5,10 @@ import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import ReactModal from 'react-modal';
-
 import getConfig from 'next/config';
+import { trackGoal } from 'fathom-client'
 
 const { publicRuntimeConfig } = getConfig();
-
 
 
 interface PopupProps {
@@ -61,6 +60,15 @@ const Button: React.FC<ButtonProps> = ({ setIsOpen }) => (
 );
 
 const Hero = function Hero() {
+  useEffect(() => {
+    const linkElement = document.getElementById('ticket-hero');
+    if (linkElement) {
+      linkElement.addEventListener('click', () => {
+        trackGoal('DGCCRRCX', 0);
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-white">
       <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -95,6 +103,7 @@ const Hero = function Hero() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
+                id="ticket-hero"
                 href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
@@ -125,6 +134,15 @@ const includedFeatures = [
 ]
 
 const Agenda = function Agenda() {
+  useEffect(() => {
+    const linkElement = document.getElementById('ticket-agenda');
+    if (linkElement) {
+      linkElement.addEventListener('click', () => {
+        trackGoal('DGCCRRCX', 0);
+      });
+    }
+  }, []);
+
   return (
     <div id="agenda" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -165,6 +183,7 @@ const Agenda = function Agenda() {
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">EUR</span>
                 </p>
                 <a
+                  id='ticket-agenda'
                   href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
@@ -401,6 +420,15 @@ const Sessions = function SessionIdeas() {
 // venue
 
 const Venue = function Venue() {
+  useEffect(() => {
+    const linkElement = document.getElementById('ticket-venue');
+    if (linkElement) {
+      linkElement.addEventListener('click', () => {
+        trackGoal('DGCCRRCX', 0);
+      });
+    }
+  }, []);
+
   return (
     <div className="overflow-hidden bg-white py-32">
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
@@ -416,6 +444,7 @@ const Venue = function Venue() {
             </p>
             <div className="mt-10 flex">
               <a
+                id="ticket-venue"
                 href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
@@ -626,6 +655,8 @@ const Newsletter = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    trackGoal('XAO6VRRP', 0);
+
     const API_KEY = 'V3xMfX7x6Mj4UU4kqtUeKQ';
     const FORM_ID = '5056764';
     const url = `https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe`;
@@ -768,6 +799,15 @@ const Footer = function Footer() {
 // Ticket CTA
 
 const TicketCTA =  function TicketCTA() {
+  useEffect(() => {
+    const linkElement = document.getElementById('ticket-cta');
+    if (linkElement) {
+      linkElement.addEventListener('click', () => {
+        trackGoal('DGCCRRCX', 0);
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-indigo-100">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
@@ -778,6 +818,7 @@ const TicketCTA =  function TicketCTA() {
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
           <a
+            id='ticket-cta'
             href="https://ti.to/machineminds/machine-minds-camp-hamburg-2023?source=mmw"
             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >

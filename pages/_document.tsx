@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Fathom from "../components/Fathom"
 
 
 export default function Document() {
@@ -12,6 +13,7 @@ export default function Document() {
         <script src="https://cdn.usefathom.com/script.js" data-site="ZGWVOOID" defer></script>
       </Head>
       <body>
+        <Fathom />
         <Main />
         <NextScript />
       </body>
